@@ -66,13 +66,13 @@
 </head>
 <body>
 
-    <h1>🔄 Движение по окружности</h1>
-    <p style="text-align: center;">Расчёт ω, T, ν, a<sub>ц</sub></p>
+    <h1>Движение по окружности</h1>
+    <p style="text-align: center;">Расчёт угловой скорости, периода, частоты и ускорения</p>
 
-    <label>📏 Радиус R (м):</label>
+    <label>Радиус R (м):</label>
     <input type="number" id="radius" placeholder="Пример: 2" step="any" value="2">
 
-    <label>⚡ Линейная скорость v (м/с):</label>
+    <label>Линейная скорость v (м/с):</label>
     <input type="number" id="velocity" placeholder="Пример: 4" step="any" value="4">
 
     <button onclick="calculate()">Рассчитать параметры</button>
@@ -86,15 +86,15 @@
             let resultDiv = document.getElementById('result');
 
             if (isNaN(R) || isNaN(v)) {
-                resultDiv.innerHTML = '<div class="error">❌ Заполните оба поля числами</div>';
+                resultDiv.innerHTML = '<div class="error">Ошибка: заполните оба поля числами</div>';
                 return;
             }
             if (R <= 0) {
-                resultDiv.innerHTML = '<div class="error">❌ Радиус должен быть больше нуля (R > 0)</div>';
+                resultDiv.innerHTML = '<div class="error">Ошибка: радиус должен быть больше нуля</div>';
                 return;
             }
             if (v <= 0) {
-                resultDiv.innerHTML = '<div class="error">❌ Скорость должна быть больше нуля (v > 0)</div>';
+                resultDiv.innerHTML = '<div class="error">Ошибка: скорость должна быть больше нуля</div>';
                 return;
             }
 
@@ -105,10 +105,10 @@
 
             resultDiv.innerHTML = `
                 <div class="result">
-                    <p><strong>📐 Угловая скорость (ω)</strong> = ${omega.toFixed(3)} рад/с</p>
-                    <p><strong>⏱️ Период (T)</strong> = ${T.toFixed(3)} с</p>
-                    <p><strong>🌀 Частота (ν)</strong> = ${frequency.toFixed(3)} Гц</p>
-                    <p><strong>🎯 Центростремительное ускорение (a<sub>ц</sub>)</strong> = ${a.toFixed(3)} м/с²</p>
+                    <p><strong>Угловая скорость (ω)</strong> = ${omega.toFixed(3)} рад/с</p>
+                    <p><strong>Период (T)</strong> = ${T.toFixed(3)} с</p>
+                    <p><strong>Частота (ν)</strong> = ${frequency.toFixed(3)} Гц</p>
+                    <p><strong>Центростремительное ускорение (a)</strong> = ${a.toFixed(3)} м/с²</p>
                 </div>
             `;
         }
