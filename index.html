@@ -5,7 +5,7 @@
     <title>Калькулятор движения по окружности</title>
     <style>
         body {
-            font-family: 'Times New Roman', serif;
+            font-family: 'Times New Roman', Times, serif;
             background: #f0f4f8;
             max-width: 500px;
             margin: 50px auto;
@@ -85,7 +85,6 @@
             let v = parseFloat(document.getElementById('velocity').value);
             let resultDiv = document.getElementById('result');
 
-            // Проверка ошибок
             if (isNaN(R) || isNaN(v)) {
                 resultDiv.innerHTML = '<div class="error">❌ Заполните оба поля числами</div>';
                 return;
@@ -99,19 +98,17 @@
                 return;
             }
 
-            // Расчёты
             let omega = v / R;
             let T = (2 * Math.PI) / omega;
             let frequency = 1 / T;
             let a = (v * v) / R;
 
-            // Вывод
             resultDiv.innerHTML = `
                 <div class="result">
                     <p><strong>📐 Угловая скорость (ω)</strong> = ${omega.toFixed(3)} рад/с</p>
                     <p><strong>⏱️ Период (T)</strong> = ${T.toFixed(3)} с</p>
                     <p><strong>🌀 Частота (ν)</strong> = ${frequency.toFixed(3)} Гц</p>
-                    <p><strong>🎯 Ускорение (a<sub>ц</sub>)</strong> = ${a.toFixed(3)} м/с²</p>
+                    <p><strong>🎯 Центростремительное ускорение (a<sub>ц</sub>)</strong> = ${a.toFixed(3)} м/с²</p>
                 </div>
             `;
         }
